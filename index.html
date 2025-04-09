@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>music player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="brand">
+                <img src="logo.jpeg" alt="image">Music$
+            </li>
+            <li>
+                Home
+            </li>
+            <li>
+                About
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        
+        <div class="songList">
+            
+             <!--volume -->
+    <div class="volume">
+        <p id="show-volume">45</p>
+        <i class="fas fa-volume-up" id="volume-icon"></i>
+         <input type="range" id="volume" min="0" value="50" max="100">
+    </div> <h1> Album Name</h1>
+            <div class="songitemContainer">
+                <div class="songItem">
+            <img src="ishq.jpg" alt="1">
+            <span class="songName">Ishq</span>
+            <span class="songToplay"><span class="timestamp">03:48 <i id="1" class="fa-regular songI fa-circle-play"></i></span></span>
+        </div><div class="songItem">
+            <img src="ishq.jpg" alt="1">
+            <span class="songName">Ishq</span>
+            <span class="songToplay"><span class="timestamp">03:48 <i id="2"  class="far songI fa-circle-play"></i></span></span>
+        </div><div class="songItem">
+            <img src="ishq.jpg" alt="1">
+            <span class="songName">Ishq</span>
+            <span class="songToplay"><span class="timestamp">03:48 <i id="3"  class="far songI fa-circle-play"></i></span></span>
+        </div><div class="songItem">
+            <img src="ishq.jpg" alt="1">
+            <span class="songName">Ishq</span>
+            <span class="songToplay"><span class="timestamp">03:48 <i id="4"  class="far songI fa-circle-play"></i></span></span>
+        </div><div class="songItem">
+            <img src="ishq.jpg" alt="1">
+            <span class="songName">Ishq</span>
+            <span class="songToplay"><span class="timestamp">03:48 <i id="5"  class="far songI fa-circle-play"></i></span></span>
+        </div>
+    </div>
+</div>
+        <div class="songBanner"></div>
+    </div>
+    <div class="songplay">
+        <input type="range" class="range" id="myProgress" min="0" value="0" max="100">
+        <div class="icons">
+            <i id="previous" class="fa-solid fa-3x  fa-backward"></i>
+            <i class="fa-regular fa-3x fa-circle-play" id="playbutton"></i>
+            <i id="next" class="fa-solid fa-3x  fa-forward"></i> </div>
+            <div class="songInfo">
+                <img src="MUSIC.gif" alt="3" id="songGIF"><span id="playInfo"></span>
+            </div>
+
+
+       
+    </div>
+    <script src="https://kit.fontawesome.com/9afdc9726b.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

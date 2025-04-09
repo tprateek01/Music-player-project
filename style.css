@@ -1,0 +1,170 @@
+body{
+    background-color: antiquewhite;
+}
+
+*{
+    margin:0;
+    padding:0;
+    
+}
+
+nav{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+}
+
+nav ul{
+    display:flex; /*to bring home and about horizontally*/
+    align-items:center;
+    list-style-type:none; /* to remove list type*/
+    height:90px; /*to change height of nav bar*/
+    background-color:rgb(118, 48, 203);
+    color:white; 
+}
+nav ul li{
+    padding:20px;
+}
+
+.brand img{
+    padding-top:8px;
+    height:70px;
+    width:80px;
+    margin:7px;
+    border-radius:60px;
+    
+}
+.brand{
+    align-items:center;
+    display:flex;
+    font-weight:bolder;
+    font-size:35px;
+}
+
+.container{
+    min-height:560px;
+    margin-left:10px;
+    width:80%;
+    display:flex;
+    border-radius:12px;
+    margin:20px auto;
+    padding:28px;
+    height:600px;
+    background-color: black;
+    color:white;
+    background-size:600px;
+    font-family:'Varela Round',sans-serif;
+    background-repeat:no-repeat;
+    background-image:url("music.jpg");
+    background-position: right center;
+    background-size:900px;
+    
+}
+.songplay{
+    position:sticky;
+    height:130px;
+    background-color: black;
+    display:flex; /*to bring content in btween songplay in the mid of songplay div*/
+    justify-content: center;
+    align-items: center;/*align the content in center*/
+    color:white;
+    flex-direction: column;
+
+    
+}
+input{
+    width:20vw;   
+}
+
+.icons{
+    margin:5px;
+}
+
+.icons{
+    cursor:pointer;
+}
+#myProgress{
+    
+    width:80vw;
+    cursor:pointer;
+    
+}
+.songItem img{
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    margin:12px;
+}
+
+.songItem{
+    min-height:30px;
+    min-width:15%;
+    background-color:white;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:10px;
+    color:black;
+    border-radius: 50px;
+    font-size:20px;
+    margin:8px;
+}
+.timestamp{
+    margin:0px 25px;
+    
+}
+.timestamp i{
+    cursor:pointer;
+    
+}
+.songitemContainer{
+margin-top:30px;
+}
+
+.songInfo img{
+    
+
+    height:18px;
+    width:100px;
+    
+    opacity:0;
+    transition: opacity 0.5s ease-in; /* to apply transition  so gif will not get invisible in instant*/
+    }
+.songInfo{
+    position:relative ;
+    font-family: 'corbel, sans-serif';
+    color:rgb(203, 99, 114);
+    
+}
+.volume{
+    display:inline-flex;
+    justify-content:top;
+    right:0;
+    float:right ;
+    position:relative;
+    
+    
+
+}
+.volume p{
+    background-color: rgb(112, 112, 240);
+    font-size:1.2rem;
+    height:2rem;
+    padding:0 3px;
+    margin-right:8px;
+    justify-content: center;
+    align-items: center;
+   
+}
+.volume i{
+    background-color: rgb(239, 98, 63);
+    font-size:1.2rem;
+    height:2rem;
+    padding:0 3px;
+    margin-right:8px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+
+}
