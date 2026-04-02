@@ -1,170 +1,228 @@
-body{
-    background-color: antiquewhite;
+/* --- 1. THEME VARIABLES --- */
+:root {
+    --bg-main: antiquewhite;
+    --nav-bg: rgb(118, 48, 203);
+    --container-bg: black;
+    --text-main: white;
+    --item-bg: rgba(255, 255, 255, 0.9);
+    --item-text: black;
+    --accent-color: #ff7e8e;
 }
 
-*{
-    margin:0;
-    padding:0;
-    
+[data-theme='dark'] {
+    --bg-main: #121212;
+    --nav-bg: #1f1f1f;
+    --container-bg: #181818;
+    --text-main: #b3b3b3;
+    --item-bg: rgba(40, 40, 40, 0.9);
+    --item-text: white;
 }
 
-nav{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   
+/* --- 2. CORE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-nav ul{
-    display:flex; /*to bring home and about horizontally*/
-    align-items:center;
-    list-style-type:none; /* to remove list type*/
-    height:90px; /*to change height of nav bar*/
-    background-color:rgb(118, 48, 203);
-    color:white; 
-}
-nav ul li{
-    padding:20px;
+body {
+    background-color: var(--bg-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background 0.3s ease;
 }
 
-.brand img{
-    padding-top:8px;
-    height:70px;
-    width:80px;
-    margin:7px;
-    border-radius:60px;
-    
-}
-.brand{
-    align-items:center;
-    display:flex;
-    font-weight:bolder;
-    font-size:35px;
-}
-
-.container{
-    min-height:560px;
-    margin-left:10px;
-    width:80%;
-    display:flex;
-    border-radius:12px;
-    margin:20px auto;
-    padding:28px;
-    height:600px;
-    background-color: black;
-    color:white;
-    background-size:600px;
-    font-family:'Varela Round',sans-serif;
-    background-repeat:no-repeat;
-    background-image:url("music.jpg");
-    background-position: right center;
-    background-size:900px;
-    
-}
-.songplay{
-    position:sticky;
-    height:130px;
-    background-color: black;
-    display:flex; /*to bring content in btween songplay in the mid of songplay div*/
-    justify-content: center;
-    align-items: center;/*align the content in center*/
-    color:white;
-    flex-direction: column;
-
-    
-}
-input{
-    width:20vw;   
-}
-
-.icons{
-    margin:5px;
-}
-
-.icons{
-    cursor:pointer;
-}
-#myProgress{
-    
-    width:80vw;
-    cursor:pointer;
-    
-}
-.songItem img{
-    width:40px;
-    height:40px;
-    border-radius:12px;
-    margin:12px;
-}
-
-.songItem{
-    min-height:30px;
-    min-width:15%;
-    background-color:white;
+/* --- 3. NAVBAR (Centered Brand) --- */
+nav ul {
     display: flex;
-    justify-content:space-between;
     align-items: center;
-    padding:10px;
-    color:black;
-    border-radius: 50px;
-    font-size:20px;
-    margin:8px;
-}
-.timestamp{
-    margin:0px 25px;
-    
-}
-.timestamp i{
-    cursor:pointer;
-    
-}
-.songitemContainer{
-margin-top:30px;
+    justify-content: center; 
+    list-style-type: none;
+    height: 90px;
+    background-color: var(--nav-bg);
+    color: white;
+    padding: 0 50px;
 }
 
-.songInfo img{
-    
+.brand {
+    display: flex;
+    align-items: center; 
+    gap: 12px;           
+    font-weight: bolder;
+    font-size: 35px;
+}
 
-    height:18px;
-    width:100px;
-    
-    opacity:0;
-    transition: opacity 0.5s ease-in; /* to apply transition  so gif will not get invisible in instant*/
+.brand img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+nav ul li {
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+#theme-toggle {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* --- 4. SEARCH BAR --- */
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#searchBar {
+    width: 40%;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1rem;
+}
+
+/* --- 5. MAIN CONTAINER --- */
+.container {
+    width: 85%;
+    margin: 20px auto;
+    padding: 30px;
+    padding-bottom: 130px; 
+    background-color: var(--container-bg);
+    color: var(--text-main);
+    border-radius: 20px;
+    min-height: 550px;
+    display: flex;
+    background-image: url("music.jpg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain; 
+}
+
+.songList {
+    width: 55%; 
+}
+
+.songList h1 {
+    margin-bottom: 20px;
+}
+
+.songItem {
+    background: var(--item-bg);
+    color: var(--item-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 12px 0;
+    border-radius: 35px;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.songItem:hover {
+    transform: scale(1.01);
+}
+
+.songItem img {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+}
+
+.timestamp {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.timestamp i {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* --- 6. VOLUME CONTROLS --- */
+.volume-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+#volume {
+    width: 100px;
+    cursor: pointer;
+}
+
+/* --- 7. BOTTOM PLAYER BAR (Slightly Reduced Height) --- */
+.songplay {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 110px;
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-top: 1px solid #333;
+}
+
+#myProgress {
+    width: 85%;
+    cursor: pointer;
+    margin-bottom: 8px;
+    accent-color: var(--nav-bg);
+}
+
+.icons i {
+    cursor: pointer;
+    margin: 0 25px;
+}
+
+.songInfo {
+    position: absolute;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    color: var(--accent-color);
+}
+
+.songInfo img {
+    width: 40px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    margin-right: 15px;
+}
+
+/* --- 8. RESPONSIVE DESIGN --- */
+@media screen and (max-width: 900px) {
+    .container {
+        width: 95%;
+        background-image: none;
+        padding-bottom: 150px; 
     }
-.songInfo{
-    position:relative ;
-    font-family: 'corbel, sans-serif';
-    color:rgb(203, 99, 114);
-    
-}
-.volume{
-    display:inline-flex;
-    justify-content:top;
-    right:0;
-    float:right ;
-    position:relative;
-    
-    
 
-}
-.volume p{
-    background-color: rgb(112, 112, 240);
-    font-size:1.2rem;
-    height:2rem;
-    padding:0 3px;
-    margin-right:8px;
-    justify-content: center;
-    align-items: center;
-   
-}
-.volume i{
-    background-color: rgb(239, 98, 63);
-    font-size:1.2rem;
-    height:2rem;
-    padding:0 3px;
-    margin-right:8px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    cursor:pointer;
+    .songList {
+        width: 100%;
+    }
 
+    #searchBar {
+        width: 80%;
+    }
+
+    .songInfo {
+        position: static;
+        margin-top: 5px;
+    }
 }
